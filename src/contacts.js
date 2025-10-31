@@ -23,10 +23,17 @@ async function listContacts() {
   return contacts;
 }
 
-// async function getContactById(contactId) {
-//   // ...твій код. Повертає об'єкт контакту з таким id. Повертає null, якщо контакт з таким id не знайдений.
-// }
+async function getContactById(contactId) {
+  // I get all contacts
+  const contacts = await listContacts();
+  // I look for the needed contact by it's id
+  const contact = contacts.find(contact=> contact.id === contactId);
+  // I returned the needed contact or null
+  return contact || null
 
+}
+const y = await getContactById('e6ywwRe4jcqxXfCZOj_1e')
+console.log(y);
 // async function removeContact(contactId) {
 //   // ...твій код. Повертає об'єкт видаленого контакту. Повертає null, якщо контакт з таким id не знайдений.
 // }
