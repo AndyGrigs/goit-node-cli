@@ -60,9 +60,15 @@
     "phone": "(123) 456-7890"
   },
   {
-    "id": "8dea4748-fb9c-462f-9e0a-45ebe1ec4972",
+    "id": "3b73562b-aeb8-42a3-a208-f45bd1685b1f",
     "name": "Ivan Volos",
     "email": "johnVolos@example.com",
     "phone": "(123) 456-43847"
+  },
+  {
+    "id": "70ca69b3-535f-4d5f-aa42-5b1902ec7db5",
+    "name": "Gary Wink",
+    "email": "wink@example.com",
+    "phone": "123-456-7890"
   }
 ]

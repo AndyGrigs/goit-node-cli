@@ -8,9 +8,9 @@ const __dirname = path.dirname(__filename);
 
 // contacts.js
 
-const contactsPath = path.join(__dirname, "db", "contacts.json");
+const contactsPath = path.resolve(__dirname, "db", "contacts.json");
 
-async function listContacts() {
+export async function listContacts() {
   // I read the file contacts.json
   const data = await fs.readFile(contactsPath, "utf-8");
   // I parse json in JS object
@@ -19,7 +19,7 @@ async function listContacts() {
   return contacts;
 }
 
-async function getContactById(contactId) {
+export async function getContactById(contactId) {
   // I get all contacts
   const contacts = await listContacts();
   // I look for the needed contact by it's id
@@ -28,7 +28,7 @@ async function getContactById(contactId) {
   return contact || null;
 }
 
-async function removeContact(contactId) {
+export async function removeContact(contactId) {
   // I get the list of contacts
   const contacts = await listContacts();
 
@@ -50,7 +50,7 @@ async function removeContact(contactId) {
 // const removed = await removeContact("rsKkOQUi80UsgVPCcLZZW")
 // console.log(removed)
 
-async function addContact(name, email, phone) {
+export async function addContact(name, email, phone) {
   // I get the list of contacts
   const contacts = await listContacts();
   // I form the new contact with its own id
@@ -67,10 +67,4 @@ async function addContact(name, email, phone) {
   return newContact;
 }
 
-const newContact = await addContact(
-  "Ivan Volos",
-  "johnVolos@example.com",
-  "(123) 456-43847"
-);
-console.log(newContact);
 
